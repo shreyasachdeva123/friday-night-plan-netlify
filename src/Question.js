@@ -33,7 +33,7 @@ const Question = ({ quizQuestions, quizOptions, images, setQuesAnswered, callBac
                     }
                 </div>
                 <div className="imgDiv" >
-                    <img className="mainImg" src={images} />
+                    <img className="mainImg" src={images} alt="" />
                 </div>
                 <div className="quesBtnDiv" >
                     <button type="button"

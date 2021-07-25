@@ -33,7 +33,7 @@ const App = () => {
                         <h2>Take a quiz to plan your Friday!</h2>
                     </div>
                     <div className="imgDiv">
-                        <img className="mainImg" src="https://images.pexels.com/photos/7262770/pexels-photo-7262770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="friday night image" />
+                        <img className="mainImg" src="https://images.pexels.com/photos/7262770/pexels-photo-7262770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="friday night" />
                     </div>
                     <div className="paraDiv">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
