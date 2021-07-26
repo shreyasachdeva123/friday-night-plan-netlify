@@ -26,6 +26,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex: 2;
 }
 
 header p {
@@ -43,7 +44,6 @@ header p {
     top: 0;
     left: 0;
     right: 0;
-    /* position: fixed; */
     width: 100%;
     height: 180px;
 }
@@ -110,6 +110,7 @@ ul li {
 
 .scroll {
     font-size: 18px;
+    flex: 2;
 }
 
 .container {
@@ -241,6 +242,9 @@ ul li {
     .headingDiv p {
         font-size: 40px;
     }
+    .navbar {
+        margin-bottom: 200px;
+    }
     .burgerMenu {
         margin-bottom: 30px;
         margin-left: 20px;
@@ -263,15 +267,20 @@ ul li {
     .heading2Div h2 {
         padding-left: 10px;
         padding-right: 10px;
-        font-size: 19px;
+        font-size: 30px;
     }
     .options {
         flex-direction: column;
     }
     .selectOptions {
-        font-size: 17px;
+        font-size: 22px;
+    }
+    .quizBtn {
+        margin-top: 30px;
     }
     .mainImg {
+        margin-top: 20px;
+        margin-bottom: 20px;
         width: 200px;
         height: 200px;
     }
@@ -319,12 +328,16 @@ ul li {
         width: 200px;
         height: 200px;
     }
+    .options {
+        flex-direction: column;
+    }
 }
 
 @media screen and (min-width:581px) and (max-width:1200px) {
     .navbar {
-        margin-bottom: 40px;
-        margin-top: 10px;
+        /* margin-bottom: 40px;
+        margin-top: 10px; */
+        margin-bottom: 50px;
     }
     .burgerMenu {
         display: none;
@@ -333,15 +346,21 @@ ul li {
         font-size: 60px;
     }
     .heading2Div h2 {
-        font-size: 30px;
+        font-size: 45px;
     }
     .quizBtn {
         height: 40px;
         width: 160px;
-        font-size: 17px;
+        font-size: 20px;
     }
     .selectOptions {
-        font-size: 30px;
+        font-size: 20px;
+    }
+    .scrollBtnDiv {
+        margin-top: 80px;
+    }
+    .options {
+        flex-direction: column;
     }
 }
 
@@ -354,5 +373,12 @@ ul li {
     }
     .quizBtn {
         font-size: 18px;
+    }
+    .options {
+        flex-direction: column;
+    }
+    .mainImg {
+        width: 230px;
+        height: 230px;
     }
 }
