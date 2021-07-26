@@ -22,7 +22,7 @@ header {
 }
 
 header p {
-    font-size: 80px;
+    font-size: 60px;
     font-weight: bold;
     font-style: italic;
     line-height: 2px;
@@ -37,6 +37,7 @@ header p {
     right: 0;
     /* position: fixed; */
     width: 100%;
+    height: 180px;
 }
 
 ul {
@@ -50,10 +51,6 @@ ul li {
     padding-right: 10px;
     list-style: none;
     font-size: 20px;
-}
-
-.burgerMenu {
-    margin-left: 15px;
 }
 
 .headingDiv {
@@ -119,8 +116,6 @@ ul li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
     height: 100vh;
     width: 100vw;
     background-color: #fff9fa;
@@ -171,6 +166,16 @@ ul li {
     margin-top: 40px;
 }
 
+.burgerMenu {
+    display: flex;
+    /* margin-bottom: 10px; */
+    width: 40px;
+    height: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (max-width:280px) {
     .headingDiv p {
         font-size: 20px;
@@ -186,9 +191,13 @@ ul li {
         display: none;
     }
     .burgerMenu {
-        margin-bottom: 10px;
+        display: flex;
+        /* margin-bottom: 10px; */
         width: 40px;
         height: 30px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .burgerMenu button {
         background-color: black;
@@ -236,7 +245,7 @@ ul li {
         font-size: 40px;
     }
     .burgerMenu {
-        margin-bottom: 10px;
+        margin-bottom: 40px;
     }
     .burgerMenu button {
         background-color: black;
@@ -254,12 +263,15 @@ ul li {
         margin-left: 20px;
     }
     .heading2Div h2 {
-        padding-left: 30px;
-        padding-right: 45px;
-        font-size: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 20px;
     }
     .options {
         flex-direction: column;
+    }
+    .selectOptions {
+        font-size: 18px;
     }
     .mainImg {
         width: 200px;
@@ -270,11 +282,12 @@ ul li {
     }
 }
 
-@media screen and(min-width:481px) and (max-width:580px) {
+@media screen and (min-width:481px) and (max-width:580px) {
     ul {
         display: none;
     }
     .burgerMenu {
+        margin-left: 20px;
         margin-bottom: 10px;
     }
     .burgerMenu button {
@@ -301,7 +314,8 @@ ul li {
     .heading2Div h2 {
         padding-left: 30px;
         padding-right: 30px;
-        font-size: 30px;
+        font-size: 25px;
+        font-style: normal;
     }
     .mainImg {
         width: 200px;
@@ -309,20 +323,21 @@ ul li {
     }
 }
 
-@media screen and(min-width:581px) and (max-width:1200px) {
+@media screen and (min-width:581px) and (max-width:1200px) {
     .navbar {
         margin-bottom: 40px;
+        margin-top: 10px;
     }
     .burgerMenu {
-        display: none !important;
+        display: none;
     }
     .headingDiv p {
         font-size: 60px;
     }
 }
 
-@media screen and (min-width: 1201) {
+@media screen and (min-width:1201px) {
     .burgerMenu {
-        display: none !important;
+        display: none;
     }
 }
