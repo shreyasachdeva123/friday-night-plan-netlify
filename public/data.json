@@ -1,0 +1,66 @@
+{
+    "RelaxedIndoorsSocialize": {
+        "result": "Call your friends over for a board game!",
+        "source": "https://www.maketecheasier.com/assets/uploads/2020/11/best-sites-to-play-board-games-online-with-friends-feature.jpg"
+    },
+    "RelaxedOutdoorsSocialize": {
+        "result": "Plan dinner with your friends and checkout that restaurant that's been on your mind for a while now!",
+        "source": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/stocksy-txp7516161ajch100-medium-1181867-1508525551.jpg"
+    },
+    "RelaxedIndoorsSolo": {
+        "result": "Let's make it a self care day! Try pampering yourself with skin care and hot shower!",
+        "source": "https://saitsa.com/wp-content/uploads/2020/09/1sc.jpg"
+    },
+    "RelaxedOutdoorsSolo": {
+        "result": "How about going for an evening walk! You never know, you might catch a sunset!",
+        "source": "https://image.shutterstock.com/image-photo/sunset-silhouettes-woman-dog-on-260nw-595642064.jpg"
+    },
+    "CheeryOutdoorsSolo": {
+        "result": "Going on a shopping spree seems like a good idea for you!",
+        "source": "https://www.familyconsumersciences.com/wp-content/uploads/shop.pic_.jpg"
+    },
+    "CheeryOutdoorsSocialize": {
+        "result": "C'mon get ready and hit the club with your buddies!",
+        "source": "https://cdn.shopify.com/s/files/1/1442/3288/files/RUSH-opening-weekend-2_1024x1024.jpg?v=1551958191"
+    },
+    "CheeryIndoorsSolo": {
+        "result": "I think it's time for some wine tasting at home!",
+        "source": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2020%2F04%2F29%2Fvirtual-wine-tastings-FT-BLOG0420.jpg"
+    },
+    "CheeryIndoorsSocialize": {
+        "result": "Throw your friends a house party!",
+        "source": "https://static.toiimg.com/thumb/msid-29853337,width-800,height-600,resizemode-75/29853337.jpg"
+    },
+    "ProductiveIndoorsSocialize": {
+        "result": "How about taking your friend's help in giving your home a new look!",
+        "source": "https://bobbyberk.com/wp-content/uploads/2020/01/Bobby-Berk_Interiors_Parents-House_33-scaled.jpg"
+    },
+    "ProductiveIndoorsSolo": {
+        "result": "The mop is waiting for you! Begin the weekend with some cleanliness!",
+        "source": "https://freshysites.com/wp-content/uploads/house-cleaning.jpg"
+    },
+    "ProductiveOutdoorsSocialize": {
+        "result": "Attend a networking event!",
+        "source": "https://www.incimages.com/uploaded_files/image/1920x1080/getty_597940046_152606.jpg"
+    },
+    "ProductiveOutdoorsSolo": {
+        "result": "Go for grocery shopping and fill up that fridge!!",
+        "source": "https://www.supermarketnews.com/sites/supermarketnews.com/files/styles/article_featured_retina/public/busyconsumers_0.jpg?itok=7RPdmM_R"
+    },
+    "SnoozyOutdoorsSolo": {
+        "result": "Ohh dearie! Just hit the bed and get your beauty sleep!",
+        "source": "https://asset.holidaycardsapp.com/assets/card/e_day_gdnt03-d363a1dcd5f62fde3adfbd5cb4fc73eb.png"
+    },
+    "SnoozyOutdoorsSocialize": {
+        "result": "Ohh dearie! Just hit the bed and get your beauty sleep!",
+        "source": "https://asset.holidaycardsapp.com/assets/card/e_day_gdnt03-d363a1dcd5f62fde3adfbd5cb4fc73eb.png"
+    },
+    "SnoozyIndoorsSolo": {
+        "result": "Ohh dearie! Just hit the bed and get your beauty sleep!",
+        "source": "https://asset.holidaycardsapp.com/assets/card/e_day_gdnt03-d363a1dcd5f62fde3adfbd5cb4fc73eb.png"
+    },
+    "SnoozyIndoorsSocialize": {
+        "result": "Ohh dearie! Just hit the bed and get your beauty sleep!",
+        "source": "https://asset.holidaycardsapp.com/assets/card/e_day_gdnt03-d363a1dcd5f62fde3adfbd5cb4fc73eb.png"
+    }
+}
