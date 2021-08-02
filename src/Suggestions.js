@@ -8,8 +8,7 @@ const Suggestions = ({ mood, socialize, location }) => {
     const [resultHeading, setResultHeading] = useState("");
     const [resultImg, setResultImg] = useState("");
 
-    function handleRetakeQuiz(e) {
-        e.preventDefault();
+    function handleRetakeQuiz() {
         setStartOver(true)
     }
 
@@ -35,7 +34,7 @@ const Suggestions = ({ mood, socialize, location }) => {
             }).catch((error) => console.log("There is an error!", error))
     }
 
-    if (startOver === false) {
+    if (!startOver) {
 
         return (
             <>
@@ -45,7 +44,7 @@ const Suggestions = ({ mood, socialize, location }) => {
                         <h2>{resultHeading}</h2>
                     </div>
                     <div className="suggestionImage">
-                        <img className="mainImg" src={resultImg} alt="" />
+                        <img className="imgContent" src={resultImg} alt="" />
                     </div>
                     <div className="paraDiv">
                         <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>

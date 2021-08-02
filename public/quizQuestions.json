@@ -1,0 +1,19 @@
+{
+    "questionDetails": [{
+            "question": "How are you feeling today?*",
+            "options": ["Relaxed", "Cheery", "Snoozy", "Productive"],
+            "image": "https://images.pexels.com/photos/3807758/pexels-photo-3807758.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+            "question": "Do you prefer indoors or outdoors?*",
+            "options": ["Indoors", "Outdoors"],
+            "image": "https://cdn.ramseysolutions.net/media/article-images/budget-date-night-l.jpg"
+        },
+        {
+            "question": "Would you like to socialize or plan solo?*",
+            "options": ["Socialize", "Solo"],
+            "image": "https://hips.hearstapps.com/clv.h-cdn.co/assets/18/02/1515470256-levi-guzman-268866.jpg"
+        }
+
+    ]
+}

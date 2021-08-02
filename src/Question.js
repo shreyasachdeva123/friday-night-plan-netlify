@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 
-const Question = ({ quizQuestions, quizOptions, images, setQuesAnswered, callBack, id, choice }) => {
+const Question = ({ quizQuestions, quizOptions, images, setQuesAnswered, updateAnswer, id, choice }) => {
 
     return (
         <>
@@ -21,7 +21,7 @@ const Question = ({ quizQuestions, quizOptions, images, setQuesAnswered, callBac
                                     name="radioBtn"
                                     value={value}
                                     onChange={
-                                        () => { callBack(value); console.log(value); }}
+                                        () => updateAnswer(value)}
                                 />
                                 <label htmlFor="mood"
                                     key={value.toUpperCase()}
@@ -32,13 +32,13 @@ const Question = ({ quizQuestions, quizOptions, images, setQuesAnswered, callBac
                         )
                     }
                 </div>
-                <div className="imgDiv" >
-                    <img className="mainImg" src={images} alt="" />
+                <div className="imgContainer" >
+                    <img className="imgContent" src={images} alt="" />
                 </div>
                 <div className="quesBtnDiv" >
                     <button type="button"
                         className="quizBtn"
-                        onClick={() => { if (choice === "") { alert("Select a value from the given options!"); } else { setQuesAnswered(true); console.log(choice) }; }}> Next Question </button>
+                        onClick={() => { if (choice === "") { alert("Select a value from the given options!"); } else { setQuesAnswered(true) } }}> Next Question </button>
                 </div>
             </div>
         </>

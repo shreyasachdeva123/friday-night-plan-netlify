@@ -1,7 +1,7 @@
 import React from "react";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./Header";
 import Question from "./Question";
 import Suggestions from "./Suggestions";
@@ -18,6 +18,27 @@ const App = () => {
     const [firstQuesAnswered, setFirstQuesAnswered] = useState(false);
     const [secondQuesAnswered, setSecondQuesAnswered] = useState(false);
     const [thirdQuesAnswered, setThirdQuesAnswered] = useState(false);
+
+    const [details, setDetails] = useState({});
+
+    useEffect(() => {
+        getQuestionData();
+    }, [])
+
+    function getQuestionData() {
+        fetch('quizQuestions.json',
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            }).then((response) => response.json())
+            .then((data) => {
+                setDetails(data);
+
+            })
+            .catch((error) => console.log("There is an error!", error))
+    }
 
 
     function handleStartQuiz() {
@@ -52,7 +73,7 @@ const App = () => {
                     quizOptions={quizOptions[0]}
                     images={images[0]}
                     setQuesAnswered={setFirstQuesAnswered}
-                    callBack={setMood}
+                    updateAnswer={setMood}
                     id="mood"
                     choice={mood}
                 />
@@ -65,7 +86,7 @@ const App = () => {
                         quizOptions={quizOptions[1]}
                         images={images[1]}
                         setQuesAnswered={setSecondQuesAnswered}
-                        callBack={setLocation}
+                        updateAnswer={setLocation}
                         id="location"
                         choice={location}
                     />
@@ -78,7 +99,7 @@ const App = () => {
                             quizOptions={quizOptions[2]}
                             images={images[2]}
                             setQuesAnswered={setThirdQuesAnswered}
-                            callBack={setSocialize}
+                            updateAnswer={setSocialize}
                             id="friends"
                             choice={socialize}
                         />
