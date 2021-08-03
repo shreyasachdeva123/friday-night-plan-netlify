@@ -10,10 +10,12 @@ const Question = ({ questionDetails, setQuestionDetails }) => {
     function handleNextQuestion() {
         if (activeQues === questionDetailsLength) {
             setQuestionsAnswered(true);
-        } else {
+        }
+        else {
             setActiveQues(activeQues + 1);
         }
     }
+
 
     function handleUserInput(e) {
         questionDetails[activeQues] = { ...questionDetails[activeQues], "answer": e.target.value }
@@ -21,11 +23,13 @@ const Question = ({ questionDetails, setQuestionDetails }) => {
         questionDetails.splice(activeQues, 1, modifiedQues);
         setQuestionDetails([...questionDetails]);
     }
+
     if (!questionsAnswered) {
         return (
             <>
                 <Header />
                 {
+                    // eslint-disable-next-line
                     questionDetails.map((question, index) => {
                         if (activeQues === index) {
                             return (
