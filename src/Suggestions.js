@@ -4,12 +4,11 @@ import App from "./App";
 import { useState, useEffect } from "react";
 
 const Suggestions = ({ questionDetails }) => {
+    let value = questionDetails.map((question) => question.answer);
+    let combinedAnswer = value.join("");
     const [startOver, setStartOver] = useState(false);
     const [resultHeading, setResultHeading] = useState("");
     const [resultImg, setResultImg] = useState("");
-    const mood = questionDetails[0].answer;
-    const location = questionDetails[1].answer;
-    const socialize = questionDetails[2].answer;
 
     function handleRetakeQuiz() {
         setStartOver(true)
@@ -28,12 +27,9 @@ const Suggestions = ({ questionDetails }) => {
                 }
             }).then((response) => response.json())
             .then((data) => {
-                console.log(data);
-                let value = `${mood}${location}${socialize}`
-                console.log(value);
-                console.log(data[value].result);
-                setResultHeading(data[value].result);
-                setResultImg(data[value].source)
+                console.log(data[combinedAnswer].result);
+                setResultHeading(data[combinedAnswer].result);
+                setResultImg(data[combinedAnswer].source)
             }).catch((error) => console.log("There is an error!", error))
     }
 
