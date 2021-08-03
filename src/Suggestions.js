@@ -3,10 +3,13 @@ import Header from "./Header";
 import App from "./App";
 import { useState, useEffect } from "react";
 
-const Suggestions = ({ mood, socialize, location }) => {
+const Suggestions = ({ questionDetails }) => {
     const [startOver, setStartOver] = useState(false);
     const [resultHeading, setResultHeading] = useState("");
     const [resultImg, setResultImg] = useState("");
+    const mood = questionDetails[0].answer;
+    const location = questionDetails[1].answer;
+    const socialize = questionDetails[2].answer;
 
     function handleRetakeQuiz() {
         setStartOver(true)
