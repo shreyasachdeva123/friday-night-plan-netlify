@@ -9,6 +9,8 @@ import Question from "./Question";
 const App = () => {
     const [quizStarted, setQuizStarted] = useState(false);
     const [questionDetails, setQuestionDetails] = useState([]);
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         getQuestionData();
@@ -21,9 +23,13 @@ const App = () => {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 }
-            }).then((response) => response.json())
+            }).then((response) =>
+                response.json()
+            )
             .then((data) => {
+                console.log(data);
                 setQuestionDetails([...data.questionDetails]);
+                setLoading(false);
             })
             .catch((error) => console.log("There is an error!", error))
     }
@@ -54,10 +60,11 @@ const App = () => {
         )
     } else {
         return (
-            <Question questionDetails={questionDetails} setQuestionDetails={setQuestionDetails} />
+            <Question questionDetails={questionDetails} setQuestionDetails={setQuestionDetails} loading={loading} />
         )
     }
 }
 
 ReactDOM.render(<StrictMode><App /></StrictMode>, document.getElementById("root"));
 export default App;
+
