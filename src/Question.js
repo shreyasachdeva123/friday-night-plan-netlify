@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import Header from "./Header";
 import Suggestions from "./Suggestions";
 import Modal from "./Modal";
 
-const Question = ({ questionDetails, setQuestionDetails, loading }) => {
+const Question = ({ questionDetails, setQuestionDetails }) => {
     const [activeQues, setActiveQues] = useState(0);
     const [questionsAnswered, setQuestionsAnswered] = useState(false);
     const questionDetailsLength = questionDetails.length - 1;
@@ -28,46 +28,49 @@ const Question = ({ questionDetails, setQuestionDetails, loading }) => {
         setQuestionDetails([...questionDetails]);
     }
 
-    if (loading) {
+    if (!questionsAnswered && !open) {
         return (
             <>
                 <Header />
-                {
-                    // eslint-disable-next-line
-                    questionDetails.map((question, index) => {
-                        if (activeQues === index) {
-                            return (
-                                <div className="container" key={index}>
-                                    <div className="heading2Div">
-                                        <h2>{question.question}</h2>
+                <Suspense fallback={<div>Loading...</div>}>
+                    {
+
+                        // eslint-disable-next-line
+                        questionDetails.map((question, index) => {
+                            if (activeQues === index) {
+                                return (
+                                    <div className="container" key={index}>
+                                        <div className="heading2Div">
+                                            <h2>{question.question}</h2>
+                                        </div>
+                                        <div className="options">
+                                            {question.options.map((option, index) => {
+                                                return (
+                                                    <div className="selectOptions">
+                                                        <input type="radio" value={option} name="radioBtn" id={index} key={option.toUpperCase()} onChange={handleUserInput} />
+                                                        <label htmlFor={index} key={option}>{option}</label>
+                                                    </div>
+                                                )
+                                            })}
+                                        </div>
+                                        <div className="imgContainer">
+                                            <img className="imgContent" alt="question pic" src={question.image} />
+                                        </div>
+                                        <div className="quesBtnDiv">
+                                            <button type="button" className="quizBtn" onClick={handleNextQuestion}>Next</button>
+                                        </div>
                                     </div>
-                                    <div className="options">
-                                        {question.options.map((option, index) => {
-                                            return (
-                                                <div className="selectOptions">
-                                                    <input type="radio" value={option} name="radioBtn" id={index} key={option.toUpperCase()} onChange={handleUserInput} />
-                                                    <label htmlFor={index} key={option}>{option}</label>
-                                                </div>
-                                            )
-                                        })}
-                                    </div>
-                                    <div className="imgContainer">
-                                        <p>Loading ...</p>
-                                        {/* <img className="imgContent" alt="question pic" src={question.image} /> */}
-                                    </div>
-                                    <div className="quesBtnDiv">
-                                        <button type="button" className="quizBtn" onClick={handleNextQuestion}>Next</button>
-                                    </div>
-                                </div>
-                            )
-                        }
-                    })
-                }
+                                )
+                            }
+                        })
+                    }
+                </Suspense>
             </>
         )
-    } else {
-        if (!questionsAnswered && !open) {
-            return (
+    } else if (!questionsAnswered && open === true) {
+        return (
+            <>
+                <Modal setOpen={setOpen} />
                 <>
                     <Header />
                     {
@@ -90,7 +93,6 @@ const Question = ({ questionDetails, setQuestionDetails, loading }) => {
                                             })}
                                         </div>
                                         <div className="imgContainer">
-                                            {loading && <p>loading...</p>}
                                             <img className="imgContent" alt="question pic" src={question.image} />
                                         </div>
                                         <div className="quesBtnDiv">
@@ -102,53 +104,15 @@ const Question = ({ questionDetails, setQuestionDetails, loading }) => {
                         })
                     }
                 </>
-            )
-        } else if (!questionsAnswered && open === true) {
-            return (
-                <>
-                    <Modal setOpen={setOpen} />
-                    <>
-                        <Header />
-                        {
-                            // eslint-disable-next-line
-                            questionDetails.map((question, index) => {
-                                if (activeQues === index) {
-                                    return (
-                                        <div className="container" key={index}>
-                                            <div className="heading2Div">
-                                                <h2>{question.question}</h2>
-                                            </div>
-                                            <div className="options">
-                                                {question.options.map((option, index) => {
-                                                    return (
-                                                        <div className="selectOptions">
-                                                            <input type="radio" value={option} name="radioBtn" id={index} key={option.toUpperCase()} onChange={handleUserInput} />
-                                                            <label htmlFor={index} key={option}>{option}</label>
-                                                        </div>
-                                                    )
-                                                })}
-                                            </div>
-                                            <div className="imgContainer">
-                                                <img className="imgContent" alt="question pic" src={question.image} />
-                                            </div>
-                                            <div className="quesBtnDiv">
-                                                <button type="button" className="quizBtn" onClick={handleNextQuestion}>Next</button>
-                                            </div>
-                                        </div>
-                                    )
-                                }
-                            })
-                        }
-                    </>
-                </>
-            )
-        } else {
-            return (
-                <Suggestions questionDetails={questionDetails} />
-            )
-        }
-
+            </>
+        )
+    } else {
+        return (
+            <Suggestions questionDetails={questionDetails} />
+        )
     }
+
+
 }
 
 export default Question;

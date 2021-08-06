@@ -9,8 +9,6 @@ import Question from "./Question";
 const App = () => {
     const [quizStarted, setQuizStarted] = useState(false);
     const [questionDetails, setQuestionDetails] = useState([]);
-    const [loading, setLoading] = useState(true);
-
 
     useEffect(() => {
         getQuestionData();
@@ -29,7 +27,6 @@ const App = () => {
             .then((data) => {
                 console.log(data);
                 setQuestionDetails([...data.questionDetails]);
-                setLoading(false);
             })
             .catch((error) => console.log("There is an error!", error))
     }
@@ -60,7 +57,7 @@ const App = () => {
         )
     } else {
         return (
-            <Question questionDetails={questionDetails} setQuestionDetails={setQuestionDetails} loading={loading} />
+            <Question questionDetails={questionDetails} setQuestionDetails={setQuestionDetails} />
         )
     }
 }
