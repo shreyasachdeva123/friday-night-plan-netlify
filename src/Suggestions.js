@@ -3,7 +3,9 @@ import Header from "./Header";
 import App from "./App";
 import { useState, useEffect } from "react";
 
-const Suggestions = ({ mood, socialize, location }) => {
+const Suggestions = ({ questionDetails }) => {
+    let value = questionDetails.map((question) => question.answer);
+    let combinedAnswer = value.join("");
     const [startOver, setStartOver] = useState(false);
     const [resultHeading, setResultHeading] = useState("");
     const [resultImg, setResultImg] = useState("");
@@ -25,12 +27,9 @@ const Suggestions = ({ mood, socialize, location }) => {
                 }
             }).then((response) => response.json())
             .then((data) => {
-                console.log(data);
-                let value = `${mood}${location}${socialize}`
-                console.log(value);
-                console.log(data[value].result);
-                setResultHeading(data[value].result);
-                setResultImg(data[value].source)
+                console.log(data[combinedAnswer].result);
+                setResultHeading(data[combinedAnswer].result);
+                setResultImg(data[combinedAnswer].source)
             }).catch((error) => console.log("There is an error!", error))
     }
 
