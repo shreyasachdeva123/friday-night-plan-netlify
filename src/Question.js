@@ -1,7 +1,10 @@
-import React, { Suspense, useState } from "react";
+import React, { useState, Suspense } from "react";
 import Header from "./Header";
 import Suggestions from "./Suggestions";
 import Modal from "./Modal";
+// import QuestionContent from "./QuestionContent";
+
+const QuestionContent = React.lazy(() => import("./QuestionContent"));
 
 const Question = ({ questionDetails, setQuestionDetails }) => {
     const [activeQues, setActiveQues] = useState(0);
@@ -33,37 +36,7 @@ const Question = ({ questionDetails, setQuestionDetails }) => {
             <>
                 <Header />
                 <Suspense fallback={<div>Loading...</div>}>
-                    {
-
-                        // eslint-disable-next-line
-                        questionDetails.map((question, index) => {
-                            if (activeQues === index) {
-                                return (
-                                    <div className="container" key={index}>
-                                        <div className="heading2Div">
-                                            <h2>{question.question}</h2>
-                                        </div>
-                                        <div className="options">
-                                            {question.options.map((option, index) => {
-                                                return (
-                                                    <div className="selectOptions">
-                                                        <input type="radio" value={option} name="radioBtn" id={index} key={option.toUpperCase()} onChange={handleUserInput} />
-                                                        <label htmlFor={index} key={option}>{option}</label>
-                                                    </div>
-                                                )
-                                            })}
-                                        </div>
-                                        <div className="imgContainer">
-                                            <img className="imgContent" alt="question pic" src={question.image} />
-                                        </div>
-                                        <div className="quesBtnDiv">
-                                            <button type="button" className="quizBtn" onClick={handleNextQuestion}>Next</button>
-                                        </div>
-                                    </div>
-                                )
-                            }
-                        })
-                    }
+                    <QuestionContent questionDetails={questionDetails} handleNextQuestion={handleNextQuestion} handleUserInput={handleUserInput} activeQues={activeQues} />
                 </Suspense>
             </>
         )
@@ -73,36 +46,9 @@ const Question = ({ questionDetails, setQuestionDetails }) => {
                 <Modal setOpen={setOpen} />
                 <>
                     <Header />
-                    {
-                        // eslint-disable-next-line
-                        questionDetails.map((question, index) => {
-                            if (activeQues === index) {
-                                return (
-                                    <div className="container" key={index}>
-                                        <div className="heading2Div">
-                                            <h2>{question.question}</h2>
-                                        </div>
-                                        <div className="options">
-                                            {question.options.map((option, index) => {
-                                                return (
-                                                    <div className="selectOptions">
-                                                        <input type="radio" value={option} name="radioBtn" id={index} key={option.toUpperCase()} onChange={handleUserInput} />
-                                                        <label htmlFor={index} key={option}>{option}</label>
-                                                    </div>
-                                                )
-                                            })}
-                                        </div>
-                                        <div className="imgContainer">
-                                            <img className="imgContent" alt="question pic" src={question.image} />
-                                        </div>
-                                        <div className="quesBtnDiv">
-                                            <button type="button" className="quizBtn" onClick={handleNextQuestion}>Next</button>
-                                        </div>
-                                    </div>
-                                )
-                            }
-                        })
-                    }
+                    <Suspense fallback={<div>Loading...</div>} />
+                    <QuestionContent questionDetails={questionDetails} handleNextQuestion={handleNextQuestion} handleUserInput={handleUserInput} activeQues={activeQues} />
+                    <Suspense />
                 </>
             </>
         )
@@ -111,7 +57,6 @@ const Question = ({ questionDetails, setQuestionDetails }) => {
             <Suggestions questionDetails={questionDetails} />
         )
     }
-
 
 }
 
